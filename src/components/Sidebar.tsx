@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Moon, Sun, Github, Linkedin, Mail, Menu, X } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
 import { Button } from "./ui/button";
+import { useTheme } from "@/hooks/use-theme";
 
 export function Sidebar() {
   const { theme, toggleTheme } = useTheme();

@@ -1,8 +1,8 @@
 import { Moon, Sun, Menu, X } from "lucide-react";
-import { useTheme } from "./ThemeProvider";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTheme } from "@/hooks/use-theme";
 
 export function Navbar() {
   const { theme, toggleTheme } = useTheme();

@@ -6,11 +6,11 @@ export function SchemaMarkup() {
     url: "https://alameenbalogun.com",
     image: "https://alameenbalogun.com/src/assets/images/profile.jpg",
     description:
-      "Full-stack developer specializing in React, TypeScript, and modern web technologies",
+      "Software Engineer specializing in React, TypeScript, and modern web technologies",
     sameAs: [
       "https://github.com/alameenbalogun",
-      "https://linkedin.com/in/alameenbalogun",
-      "https://twitter.com/alameenbalogun",
+      "www.linkedin.com/in/al-ameen-balogun-60739419a",
+      "https://twitter.com/omobalogun7",
     ],
     jobTitle: "Software Engineer",
     worksFor: {
@@ -31,10 +31,10 @@ export function WebsiteSchema() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Al-ameen Balogun Portfolio",
+    name: "Al-ameen Balogun",
     url: "https://alameenbalogun.com",
     description:
-      "Full-stack developer portfolio showcasing projects, experience, and skills",
+      "Software Engineer portfolio showcasing projects, experience, and skills",
     potentialAction: {
       "@type": "SearchAction",
       target: {

@@ -53,7 +53,7 @@ export function SEO({
     updateMeta("og:image", image, true);
     updateMeta("og:url", url, true);
     updateMeta("og:type", type, true);
-    updateMeta("og:site_name", "Al-ameen Balogun Portfolio", true);
+    updateMeta("og:site_name", "Al-ameen Balogun ", true);
 
     // Twitter tags
     updateMeta("twitter:card", "summary_large_image");

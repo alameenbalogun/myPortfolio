@@ -1,31 +1,31 @@
-import { motion, useScroll, useTransform } from 'motion/react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Send } from 'lucide-react';
-import { useState, useRef } from 'react';
-import { toast } from 'sonner';
+import { motion, useScroll, useTransform } from "motion/react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Send } from "lucide-react";
+import { useState, useRef } from "react";
+import { toast } from "sonner";
 
 export function Contact() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'end start'],
+    offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['-100px', '100px']);
+  const y = useTransform(scrollYProgress, [0, 1], ["-100px", "100px"]);
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    toast.success('Message sent successfully! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+
+    toast.success("Message sent successfully! I'll get back to you soon.");
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const handleChange = (
@@ -47,13 +47,13 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4">
             Get In Touch
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 md:mb-12">
+          <p className="text-white dark:text-gray-400 mb-8 sm:mb-10 md:mb-12">
             Have a project in mind or want to collaborate? I'd love to hear from
             you.
           </p>
@@ -68,7 +68,7 @@ export function Contact() {
           className="space-y-5 sm:space-y-6"
         >
           <div className="grid sm:grid-cols-2 gap-5 sm:gap-6">
-            <motion.div 
+            <motion.div
               className="space-y-2"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -83,7 +83,7 @@ export function Contact() {
               </label>
               <motion.div
                 whileFocus={{ scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <Input
                   id="name"
@@ -96,7 +96,7 @@ export function Contact() {
                 />
               </motion.div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="space-y-2"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -111,7 +111,7 @@ export function Contact() {
               </label>
               <motion.div
                 whileFocus={{ scale: 1.02 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <Input
                   id="email"
@@ -127,7 +127,7 @@ export function Contact() {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             className="space-y-2"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ export function Contact() {
             </label>
             <motion.div
               whileFocus={{ scale: 1.02 }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
               <Textarea
                 id="message"
@@ -168,12 +168,12 @@ export function Contact() {
             <Button
               type="submit"
               size="lg"
-              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+              className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white dark:text-white"
             >
               <motion.div
                 className="flex items-center"
                 whileHover={{ x: 5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <Send className="w-5 h-5 mr-2" />
                 Send Message
@@ -190,9 +190,13 @@ export function Contact() {
           className="mt-12 sm:mt-14 md:mt-16 pt-6 sm:pt-7 md:pt-8 border-t border-gray-200 dark:border-gray-800 grid sm:grid-cols-3 gap-6 sm:gap-8 text-center sm:text-left"
         >
           {[
-            { label: 'Email', value: 'alameenbalogun61@gmail.com', link: 'mailto:alameenbalogun61@gmail.com' },
-            { label: 'Location', value: 'Nigeria' },
-            { label: 'Availability', value: 'Open for opportunities' }
+            {
+              label: "Email",
+              value: "alameenbalogun61@gmail.com",
+              link: "mailto:alameenbalogun61@gmail.com",
+            },
+            { label: "Location", value: "Nigeria" },
+            { label: "Availability", value: "Open for opportunities" },
           ].map((item, index) => (
             <motion.div
               key={item.label}

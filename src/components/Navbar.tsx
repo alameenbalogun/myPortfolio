@@ -67,7 +67,7 @@ export function Navbar() {
               variant="ghost"
               size="icon"
               onClick={toggleTheme}
-              className="rounded-full"
+              className="rounded-full text-gray-900 dark:text-white"
             >
               {theme === "light" ? (
                 <Moon className="h-5 w-5" />

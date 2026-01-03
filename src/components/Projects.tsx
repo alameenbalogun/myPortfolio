@@ -44,7 +44,14 @@ export function Projects() {
       description:
         "A recruitment platform connecting job seekers with employers, featuring job listings, application tracking, and user profiles.",
       image: marvel,
-      tags: ["React.js", "Typescript", "Shadcn", "Tailwind", "Supabase", "Paystack Integration"],
+      tags: [
+        "React.js",
+        "Typescript",
+        "Shadcn",
+        "Tailwind",
+        "Supabase",
+        "Paystack Integration",
+      ],
       github: "https://github.com/Acepro-ai/nigerian-tech-hive",
       demo: "https://marvelrecruits.com/",
     },
@@ -198,7 +205,12 @@ export function Projects() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Button variant="outline" size="sm" asChild>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="text-gray-900 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
+                      >
                         <a
                           href={project.github}
                           target="_blank"
@@ -243,7 +255,12 @@ export function Projects() {
           className="text-center mt-12 sm:mt-16 md:mt-20"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button variant="outline" size="lg" asChild>
+            <Button
+              variant="outline"
+              size="lg"
+              asChild
+              className="text-gray-900 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800"
+            >
               <a
                 href="https://github.com/alameenbalogun"
                 target="_blank"

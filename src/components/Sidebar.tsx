@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Moon, Sun, Github, Linkedin, Mail, Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
@@ -10,25 +10,31 @@ export function Sidebar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollOpacity, setScrollOpacity] = useState(1);
 
-  const roles = [
-    "Software Engineer",
-    "Frontend Engineer",
-    "Backend Engineer",
-    "Mobile Engineer",
-  ];
+  const roles = useMemo(
+    () => [
+      "Software Engineer",
+      "Frontend Engineer",
+      "Backend Engineer",
+      "Mobile Engineer",
+    ],
+    []
+  );
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "experience", label: "Experience" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "contact", label: "Contact" },
-  ];
+  const navItems = useMemo(
+    () => [
+      { id: "home", label: "Home" },
+      { id: "about", label: "About" },
+      { id: "experience", label: "Experience" },
+      { id: "skills", label: "Skills" },
+      { id: "projects", label: "Projects" },
+      { id: "contact", label: "Contact" },
+    ],
+    []
+  );
 
   const socialLinks = [
     {
@@ -104,7 +110,7 @@ export function Sidebar() {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -173,7 +179,7 @@ export function Sidebar() {
                     Al-ameen Balogun
                   </h1>
                   <div className="h-6 flex items-center">
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    <p className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                       {displayedText}
                       <motion.span
                         animate={{ opacity: [1, 0, 1] }}
@@ -254,7 +260,7 @@ export function Sidebar() {
               Al-ameen Balogun
             </h1>
             <div className="h-6 flex items-center">
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                 {displayedText}
                 <motion.span
                   animate={{ opacity: [1, 0, 1] }}

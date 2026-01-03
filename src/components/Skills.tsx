@@ -1,93 +1,90 @@
-import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 export function Skills() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'end start'],
+    offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['-50px', '50px']);
+  const y = useTransform(scrollYProgress, [0, 1], ["-50px", "50px"]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
 
   const skills = [
-    { 
-      name: 'HTML5', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
-      category: 'Frontend' 
+    {
+      name: "HTML5",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+      category: "Frontend",
     },
-    { 
-      name: 'CSS3', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
-      category: 'Frontend' 
+    {
+      name: "CSS3",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+      category: "Frontend",
     },
-    { 
-      name: 'JavaScript', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
-      category: 'Frontend' 
+    {
+      name: "JavaScript",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      category: "Frontend",
     },
-    { 
-      name: 'React', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-      category: 'Frontend' 
+    {
+      name: "React",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+      category: "Frontend",
     },
-    { 
-      name: 'React Native', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
-      category: 'Frontend' 
+    {
+      name: "React Native",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+      category: "Frontend",
     },
-    { 
-      name: 'Tailwind CSS', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
-      category: 'Frontend' 
+    {
+      name: "Tailwind CSS",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+      category: "Frontend",
     },
-    { 
-      name: 'Node.js', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
-      category: 'Backend' 
+    {
+      name: "Node.js",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+      category: "Backend",
     },
-    { 
-      name: 'Express', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
-      category: 'Backend' 
+    {
+      name: "Express",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+      category: "Backend",
     },
-    { 
-      name: 'MongoDB', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
-      category: 'Backend' 
+    {
+      name: "MongoDB",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+      category: "Backend",
     },
-    { 
-      name: 'Mongoose', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original.svg',
-      category: 'Backend' 
+    {
+      name: "Mongoose",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongoose/mongoose-original.svg",
+      category: "Backend",
     },
-    { 
-      name: 'Next.js', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
-      category: 'Learning' 
+    {
+      name: "Next.js",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+      category: "Learning",
     },
-    { 
-      name: 'TypeScript', 
-      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
-      category: 'Learning' 
+    {
+      name: "TypeScript",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+      category: "Learning",
     },
   ];
 
   return (
-    <section 
+    <section
       ref={ref}
-      id="skills" 
+      id="skills"
       className="min-h-screen flex items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 md:py-24 relative"
     >
-      <motion.div 
-        className="max-w-5xl mx-auto w-full"
-        style={{ opacity }}
-      >
+      <motion.div className="max-w-5xl mx-auto w-full" style={{ opacity }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-gray-900 dark:text-white mb-2 sm:mb-3">
@@ -104,16 +101,16 @@ export function Skills() {
               key={skill.name}
               initial={{ opacity: 0, scale: 0.5, rotateY: -90 }}
               whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{
                 duration: 0.6,
                 delay: index * 0.05,
-                type: 'spring',
+                type: "spring",
                 stiffness: 100,
               }}
-              whileHover={{ 
+              whileHover={{
                 y: -8,
-                transition: { type: 'spring', stiffness: 300, damping: 10 }
+                transition: { type: "spring", stiffness: 300, damping: 10 },
               }}
               className="group"
             >
@@ -123,8 +120,8 @@ export function Skills() {
                   transition={{ duration: 0.5 }}
                   className="relative shrink-0"
                 >
-                  <img 
-                    src={skill.logo} 
+                  <img
+                    src={skill.logo}
                     alt={skill.name}
                     className="w-8 h-8 sm:w-10 sm:h-10 object-contain dark:brightness-90"
                   />
@@ -153,7 +150,7 @@ export function Skills() {
         >
           <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
             Also experienced with: Git, GitHub, REST APIs, Responsive Design,
-            UI/UX Design, Agile Methodologies
+            UI/UX Design, Agile Methodologies, Docker, Firebase, Supabase
           </p>
         </motion.div>
 
